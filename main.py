@@ -329,7 +329,7 @@ def main():
 							sac.MenuItem("6b. Chatbot with Memory", icon='filetype-py'),
 							sac.MenuItem("7a. RAG", icon='filetype-py'),
 							sac.MenuItem("7b. Chatbot with Memory & RAG", icon='filetype-py'),
-							sac.MenuItem("8a. Database", icon='filetype-py'),
+							sac.MenuItem("8. Database", icon='filetype-py'),
 							sac.MenuItem("9. Chatbot with Memory & RAG & recorded", icon='filetype-py'),
 						]),
 					]),
@@ -339,10 +339,10 @@ def main():
 						sac.MenuItem(return_function_name('KB management', 'Knowledge Base Editor'), icon='database-fill-up',disabled=is_function_disabled('KB management')),
 					]),
 
-					sac.MenuItem('GenAI Features & Apps', icon='book', children=[
-						sac.MenuItem(return_function_name('Image Generator','Image Analyser and Generator'), icon='camera', disabled=is_function_disabled('Image Generator')),
-						sac.MenuItem(return_function_name('Voice','Voice Analyser and Generator'), icon='mic',disabled=is_function_disabled('Voice')),
-					]),	
+					#sac.MenuItem('GenAI Features & Apps', icon='book', children=[
+					#	sac.MenuItem(return_function_name('Image Generator','Image Analyser and Generator'), icon='camera', disabled=is_function_disabled('Image Generator')),
+					#	sac.MenuItem(return_function_name('Voice','Voice Analyser and Generator'), icon='mic',disabled=is_function_disabled('Voice')),
+					#]),	
 
 					sac.MenuItem('Types of ChatBots', icon='person-fill-gear', children=[
 						#sac.MenuItem(return_function_name('Discussion Chatbot'), icon='people', disabled=is_function_disabled('Discussion Chatbot')),
@@ -445,7 +445,7 @@ def main():
 		elif st.session_state.option == 'Python (Ex 0-9 & Ch 1-3)':
 			# Code for Starting Bot
 			st.subheader(f":green[{st.session_state.option}]")
-			st.session_state.chatbot = st.session_state.connecting_bot
+			#st.session_state.chatbot = st.session_state.connecting_bot
 			
 			python_ex = st.selectbox(
 				"Select the Python Exercise",
@@ -545,7 +545,7 @@ def main():
 			pass
 		elif st.session_state.option == '6b. Chatbot with Memory':
 			# call the openai basebot with memory function here
-			ex.prompt_design()
+			#ex.prompt_design()
 			ex.basebot_prompt_design_memory()
 			pass
 		elif st.session_state.option == '7a. RAG':
@@ -554,16 +554,16 @@ def main():
 			pass
 		elif st.session_state.option == '7b. Chatbot with Memory & RAG':
 			# call the openai basebot with memory and RAG function here
-			ex.prompt_design()
+			#ex.prompt_design()
 			ex.basebot_prompt_design_memory_rag()
 			pass
-		elif st.session_state.option == '8a. Database':
+		elif st.session_state.option == '8. Database':
 			# call the database function here
 			ex.initialise()
 			pass
 		elif st.session_state.option == '9. Chatbot with Memory & RAG & recorded':
 			# call the openai basebot with memory and RAG function and recorded data here
-			ex.prompt_design()
+			#ex.prompt_design()
 			ex.basebot_prompt_design_memory_rag_data()
 			pass
 
